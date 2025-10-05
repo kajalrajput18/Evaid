@@ -17,7 +17,6 @@ A safety-first navigation web application that provides both the fastest and saf
 - **Backend**: Node.js + Express.js
 - **Database**: MongoDB
 - **Maps**: Google Maps API
-- **Authentication**: Firebase Auth
 - **Real-time**: WebSockets
 
 ## 🚀 Quick Start
@@ -37,7 +36,7 @@ A safety-first navigation web application that provides both the fastest and saf
    ```
 
 4. **Access the application**:
-   - Frontend: http://localhost:3000
+   - Frontend: http://localhost:3001
    - Backend API: http://localhost:5000
 
 ## 📁 Project Structure
@@ -75,10 +74,7 @@ evaid-travel-safety/
 - `EMAIL_PASS`: Email service password
 
 **Client (.env)**:
-- `REACT_APP_FIREBASE_API_KEY`: Firebase API key
-- `REACT_APP_FIREBASE_AUTH_DOMAIN`: Firebase auth domain
-- `REACT_APP_FIREBASE_PROJECT_ID`: Firebase project ID
-- `REACT_APP_GOOGLE_MAPS_API_KEY`: Google Maps API key
+-`REACT_APP_GOOGLE_MAPS_API_KEY`: Google Maps API key
 - `REACT_APP_API_URL`: Backend API URL
 
 ## 🚨 Security Features
