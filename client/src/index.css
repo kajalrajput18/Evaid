@@ -1,0 +1,220 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  
+  body {
+    @apply bg-gray-50 text-gray-900;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 transition-colors duration-200;
+  }
+  
+  .btn-primary {
+    @apply btn bg-primary-600 text-white hover:bg-primary-700 focus:ring-primary-500;
+  }
+  
+  .btn-secondary {
+    @apply btn bg-gray-600 text-white hover:bg-gray-700 focus:ring-gray-500;
+  }
+  
+  .btn-success {
+    @apply btn bg-safety-600 text-white hover:bg-safety-700 focus:ring-safety-500;
+  }
+  
+  .btn-danger {
+    @apply btn bg-danger-600 text-white hover:bg-danger-700 focus:ring-danger-500;
+  }
+  
+  .btn-warning {
+    @apply btn bg-warning-600 text-white hover:bg-warning-700 focus:ring-warning-500;
+  }
+  
+  .btn-outline {
+    @apply btn bg-transparent border-gray-300 text-gray-700 hover:bg-gray-50 focus:ring-primary-500;
+  }
+  
+  .input {
+    @apply block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-primary-500 focus:border-primary-500;
+  }
+  
+  .input-error {
+    @apply input border-danger-300 focus:ring-danger-500 focus:border-danger-500;
+  }
+  
+  .card {
+    @apply bg-white rounded-lg shadow-sm border border-gray-200;
+  }
+  
+  .card-header {
+    @apply px-6 py-4 border-b border-gray-200;
+  }
+  
+  .card-body {
+    @apply px-6 py-4;
+  }
+  
+  .card-footer {
+    @apply px-6 py-4 border-t border-gray-200 bg-gray-50;
+  }
+  
+  .safety-indicator {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+  
+  .safety-high {
+    @apply safety-indicator bg-safety-100 text-safety-800;
+  }
+  
+  .safety-medium {
+    @apply safety-indicator bg-warning-100 text-warning-800;
+  }
+  
+  .safety-low {
+    @apply safety-indicator bg-danger-100 text-danger-800;
+  }
+  
+  .route-fastest {
+    @apply border-l-4 border-primary-500 bg-primary-50;
+  }
+  
+  .route-safest {
+    @apply border-l-4 border-safety-500 bg-safety-50;
+  }
+  
+  .sos-button {
+    @apply fixed bottom-6 right-6 w-16 h-16 bg-danger-600 hover:bg-danger-700 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-200 flex items-center justify-center text-2xl font-bold focus:outline-none focus:ring-4 focus:ring-danger-300;
+  }
+  
+  .sos-button:active {
+    @apply transform scale-95;
+  }
+  
+  .loading-spinner {
+    @apply animate-spin rounded-full h-8 w-8 border-b-2 border-primary-600;
+  }
+  
+  .map-container {
+    @apply w-full h-full rounded-lg overflow-hidden;
+  }
+  
+  .location-input {
+    @apply w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500;
+  }
+  
+  .contact-card {
+    @apply card hover:shadow-md transition-shadow duration-200;
+  }
+  
+  .journey-card {
+    @apply card hover:shadow-md transition-shadow duration-200 cursor-pointer;
+  }
+  
+  .status-badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+  
+  .status-planned {
+    @apply status-badge bg-gray-100 text-gray-800;
+  }
+  
+  .status-active {
+    @apply status-badge bg-primary-100 text-primary-800;
+  }
+  
+  .status-completed {
+    @apply status-badge bg-safety-100 text-safety-800;
+  }
+  
+  .status-cancelled {
+    @apply status-badge bg-danger-100 text-danger-800;
+  }
+}
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .text-shadow-lg {
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .backdrop-blur-xs {
+    backdrop-filter: blur(2px);
+  }
+  
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Loading animation */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Map styles */
+.gm-style-iw {
+  border-radius: 8px !important;
+}
+
+.gm-style-iw-d {
+  overflow: hidden !important;
+}
+
+/* Responsive design */
+@media (max-width: 640px) {
+  .sos-button {
+    @apply bottom-4 right-4 w-14 h-14 text-xl;
+  }
+  
+  .card {
+    @apply mx-2;
+  }
+  
+  .card-header,
+  .card-body,
+  .card-footer {
+    @apply px-4 py-3;
+  }
+}
